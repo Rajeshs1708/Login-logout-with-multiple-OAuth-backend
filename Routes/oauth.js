@@ -43,7 +43,7 @@ router.get("/logout", (req, res, next) => {
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
 router.get("/google/callback", passport.authenticate("google", {
-    successRedirect: `${CLIENT_URL}/home`,
+    successRedirect: `https://login-with-oauth.netlify.app/home`,
     failureRedirect: "/login/failed",
 }));
 
