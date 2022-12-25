@@ -13,7 +13,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: "https://radiant-kulfi-e51616.netlify.app",
+    origin: "https://login-with-oauth.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));
