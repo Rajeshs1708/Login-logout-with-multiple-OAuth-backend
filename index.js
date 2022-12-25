@@ -13,7 +13,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://radiant-kulfi-e51616.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));
