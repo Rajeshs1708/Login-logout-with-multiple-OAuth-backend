@@ -3,6 +3,16 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 
+const GOOGLE_CLIENT_ID = "946149001874-vbkhl33mrjloffvhj60hl7uetmgl1n7q.apps.googleusercontent.com"
+const GOOGLE_CLIENT_SECRET = "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"
+const GOOGLE_CALLBACK_URL = "http://localhost:8080/auth/google/callback"
+const GITHUB_CLIENT_ID = "14f0d5998bc2936f3c1b"
+const GITHUB_CLIENT_SECRET = "ba7dc23142e6874aaa69379afb1807ca5576708c"
+const GITHUB_CALLBACK_URL = "http://localhost:8080/auth/github/callback"
+const FACEBOOK_APP_ID = "asdadsad"
+const FACEBOOK_APP_SECRET = "asdasdasd"
+const FACEBOOK_CALLBACK_URL = "http://localhost:8080/auth/facebook/callback"
+
 passport.serializeUser((user, done) => {
   done(null, user)
 })
@@ -12,9 +22,9 @@ passport.deserializeUser((user, done) => {
 
 // Google
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: process.env.GOOGLE_CALLBACK_URL,
+  clientID: GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: GOOGLE_CALLBACK_URL,
   passReqToCallback: true
 },
   function (request, accessToken, refreshToken, profile, done) {
@@ -24,9 +34,9 @@ passport.use(new GoogleStrategy({
 
 // Github
 passport.use(new GitHubStrategy({
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: process.env.GITHUB_CALLBACK_URL,
+  clientID: GITHUB_CLIENT_ID,
+  clientSecret: GITHUB_CLIENT_SECRET,
+  callbackURL: GITHUB_CALLBACK_URL,
   passReqToCallback: true
 
 },
@@ -37,13 +47,13 @@ passport.use(new GitHubStrategy({
 
 // Facebook
 passport.use(new FacebookStrategy({
-  clientID: process.env.FACEBOOK_APP_ID,
-  clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: process.env.FACEBOOK_CALLBACK_URL,
+  clientID: FACEBOOK_APP_ID,
+  clientSecret: FACEBOOK_APP_SECRET,
+  callbackURL: FACEBOOK_CALLBACK_URL,
   passReqToCallback: true
 
 },
-function (request, accessToken, refreshToken, profile, done) {
-  return done(null, profile);
-}
+  function (request, accessToken, refreshToken, profile, done) {
+    return done(null, profile);
+  }
 ));
