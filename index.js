@@ -18,13 +18,14 @@ app.use(cors({
     credentials: true,
 }));
 app.use(express.json());
-app.use(session({
-    secret: 'somethingsecretgoeshere',
-}));
+app.use(session({ secret: process.env.SESSION_SECRET_KEY, }));
 app.use(passport.initialize())
 app.use(passport.session())
 
 
+app.get('/', (req, res) => {
+    res.send("<h1>Hello World</h1>")
+})
 //Routes
 app.use('/auth', oAuthRoute)
 app.use('/api', authRoutes);
