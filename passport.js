@@ -9,8 +9,8 @@ const GOOGLE_CALLBACK_URL = `https://login-and-logout-with-multiple-oauth.onrend
 const GITHUB_CLIENT_ID = "14f0d5998bc2936f3c1b"
 const GITHUB_CLIENT_SECRET = "ba7dc23142e6874aaa69379afb1807ca5576708c"
 const GITHUB_CALLBACK_URL = "https://login-and-logout-with-multiple-oauth.onrender.com/auth/github/callback"
-const FACEBOOK_APP_ID = "asdadsad"
-const FACEBOOK_APP_SECRET = "asdasdasd"
+const FACEBOOK_APP_ID = "1f0d5998bc2936f3"
+const FACEBOOK_APP_SECRET = "23142e6874aaa69379afb1807c"
 const FACEBOOK_CALLBACK_URL = "https://login-and-logout-with-multiple-oauth.onrender.com/auth/facebook/callback"
 
 passport.serializeUser((user, done) => {
