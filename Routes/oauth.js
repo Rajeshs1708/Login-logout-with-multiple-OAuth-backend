@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const CLIENT_URL = "https://login-with-oauth.netlify.app/"
+const CLIENT_URL = "https://login-with-oauth.netlify.app"
 
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
