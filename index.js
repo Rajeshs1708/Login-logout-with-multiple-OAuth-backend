@@ -18,7 +18,12 @@ app.use(cors({
     credentials: true,
 }));
 app.use(express.json());
-app.use(session({ secret: "somethingsecretgoeshere" }));
+app.use(session({ 
+    secret: "somethingsecretgoeshere",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+ }));
 app.use(passport.initialize())
 app.use(passport.session())
 
