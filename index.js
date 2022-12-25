@@ -22,7 +22,6 @@ app.use(session({
     secret: "somethingsecretgoeshere",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
 }));
 app.use(passport.initialize())
 app.use(passport.session())

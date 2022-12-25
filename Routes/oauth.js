@@ -42,25 +42,28 @@ router.get("/logout", (req, res, next) => {
 //Google 
 router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
-router.get("/google/callback", passport.authenticate("google", {
-    successRedirect: `https://login-with-oauth.netlify.app/home`,
-    failureRedirect: "/login/failed",
-}));
+router.get("/google/callback", passport.authenticate("google", { failureRedirect: "/login/failed" }),
+    function (req, res) {
+        res.redirect("https://login-with-oauth.netlify.app")
+    }
+);
 
 //Github
 router.get("/github", passport.authenticate("github", { scope: ["profile"] }));
 
-router.get("/github/callback", passport.authenticate("github", {
-    successRedirect:`${CLIENT_URL}/home`,
-    failureRedirect: "/login/failed",
-}));
+router.get("/github/callback", passport.authenticate("github", { failureRedirect: "/login/failed" }),
+    function (req, res) {
+        res.redirect("https://login-with-oauth.netlify.app")
+    }
+);
 
 //Facebook
 router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }));
 
-router.get("/facebook/callback", passport.authenticate("facebook", {
-    successRedirect: `${CLIENT_URL}/home`,
-    failureRedirect: "/login/failed",
-}));
+router.get("/facebook/callback", passport.authenticate("facebook", { failureRedirect: "/login/failed" }),
+    function (req, res) {
+        res.redirect("https://login-with-oauth.netlify.app")
+    }
+);
 
 module.exports = router;
