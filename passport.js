@@ -25,7 +25,7 @@ passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
   callbackURL: GOOGLE_CALLBACK_URL,
-  passReqToCallback: true
+  // passReqToCallback: true
 },
   function (request, accessToken, refreshToken, profile, done) {
     return done(null, profile)
@@ -37,7 +37,7 @@ passport.use(new GitHubStrategy({
   clientID: GITHUB_CLIENT_ID,
   clientSecret: GITHUB_CLIENT_SECRET,
   callbackURL: GITHUB_CALLBACK_URL,
-  passReqToCallback: true
+  // passReqToCallback: true
 
 },
   function (request, accessToken, refreshToken, profile, done) {
@@ -50,7 +50,7 @@ passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
   callbackURL: FACEBOOK_CALLBACK_URL,
-  passReqToCallback: true
+  // passReqToCallback: true
 
 },
   function (request, accessToken, refreshToken, profile, done) {
