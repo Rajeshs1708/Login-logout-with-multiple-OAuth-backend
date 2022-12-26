@@ -27,6 +27,9 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
+app.get('/',(req,res)=>{
+    res.send("<h3>Hello World</h3>")
+})
 //Routes
 app.use('/auth', oAuthRoute)
 app.use('/api', authRoutes);
