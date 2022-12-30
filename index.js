@@ -2,6 +2,7 @@ require("dotenv").config();
 const session = require('express-session');
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const passport = require("passport");
 const passportSetup = require('./passport');
 const oAuthRoute = require('./Routes/oauth');
@@ -18,6 +19,7 @@ app.use(cors({
     credentials: true,
 }));
 app.use(express.json());
+app.use(bodyParser.urlencoded())
 app.use(session({
     secret: "somethingsecretgoeshere",
     resave: false,

@@ -9,7 +9,7 @@ function isLoggedIn(req, res, next) {
 
 router.get("/login/success", isLoggedIn, (req, res) => {
     if (req.user) {
-        res.status(200).json({
+        res.status(200).send({
             success: true,
             message: "Successfully Loged In",
             user: {
@@ -18,7 +18,7 @@ router.get("/login/success", isLoggedIn, (req, res) => {
             }
         })
     } else {
-        res.status(403).json({
+        res.status(403).send({
             success: true,
             message: "Not Authorized",
         })
@@ -26,7 +26,7 @@ router.get("/login/success", isLoggedIn, (req, res) => {
 });
 
 router.get("/login/failed", (req, res) => {
-    res.status(401).json({
+    res.status(401).send({
         success: false,
         message: "failure",
     })
