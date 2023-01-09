@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: "https://login-with-oauth.netlify.app",
+    origin: "https://login-with-oauth.netlify.app/login",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));

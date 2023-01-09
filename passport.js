@@ -36,7 +36,7 @@ passport.use(new GitHubStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "/auth/facebook/callback",
+  callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/facebook/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     return done(null, profile);
