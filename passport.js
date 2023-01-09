@@ -17,6 +17,7 @@ passport.use(new GoogleStrategy({
   callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/google/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
+    console.log(profile);
     return done(null, profile)
   }
 ));
@@ -28,6 +29,7 @@ passport.use(new GitHubStrategy({
   callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/github/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
+    
     return done(null, profile);
   }
 ));
