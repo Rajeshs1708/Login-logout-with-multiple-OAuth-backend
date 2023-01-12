@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-    origin: "https://login-with-oauth.netlify.app",
+    origin: "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
 }));
