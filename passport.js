@@ -14,7 +14,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "/auth/google/callback",
+  callbackURL: "https://login-logout-with-multiple-o-auth-backend.vercel.app/auth/google/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     console.log(profile);
