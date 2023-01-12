@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: "/auth/github/callback",
+  callbackURL: "https://login-logout-with-multiple-o-auth-backend.vercel.app/auth/github/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     
@@ -38,7 +38,7 @@ passport.use(new GitHubStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "/auth/facebook/callback",
+  callbackURL: "https://login-logout-with-multiple-o-auth-backend.vercel.app/auth/facebook/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     return done(null, profile);
