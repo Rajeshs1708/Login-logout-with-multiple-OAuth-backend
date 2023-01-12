@@ -14,7 +14,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/google/callback",
+  callbackURL: "/auth/google/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     console.log(profile);
@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/github/callback",
+  callbackURL: "/auth/github/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     
@@ -38,7 +38,7 @@ passport.use(new GitHubStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "https://login-and-logout-with-multiple-oauth.onrender.com/auth/facebook/callback",
+  callbackURL: "/auth/facebook/callback",
 },
   function (request, accessToken, refreshToken, profile, done) {
     return done(null, profile);
