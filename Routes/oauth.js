@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const CLIENT_URL = "https://login-with-oauth.netlify.app/login"
+const CLIENT_URL = "http://localhost:3000/login"
 
 function isLoggedIn(req, res, next) {
     req.user ? next() : res.sendStatus(401);
@@ -44,7 +44,7 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
 router.get("/google/callback", passport.authenticate("google", { failureRedirect: "/login/failed" }),
     function (req, res) {
-        res.redirect("https://login-with-oauth.netlify.app")
+        res.redirect("http://localhost:3000")
     }
 );
 
@@ -53,7 +53,7 @@ router.get("/github", passport.authenticate("github", { scope: ["profile"] }));
 
 router.get("/github/callback", passport.authenticate("github", { failureRedirect: "/login/failed" }),
     function (req, res) {
-        res.redirect("https://login-with-oauth.netlify.app")
+        res.redirect("http://localhost:3000")
     }
 );
 
@@ -62,7 +62,7 @@ router.get("/facebook", passport.authenticate("facebook", { scope: ["profile"] }
 
 router.get("/facebook/callback", passport.authenticate("facebook", { failureRedirect: "/login/failed" }),
     function (req, res) {
-        res.redirect("https://login-with-oauth.netlify.app")
+        res.redirect("http://localhost:3000")
     }
 );
 
