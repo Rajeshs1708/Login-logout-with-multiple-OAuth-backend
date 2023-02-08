@@ -3,11 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 const CLIENT_URL = "https://login-with-oauth.netlify.app/login"
 
-function isLoggedIn(req, res, next) {
-    req.user ? next() : res.sendStatus(401);
-}
+// function isLoggedIn(req, res, next) {
+//     req.user ? next() : res.sendStatus(401);
+// }
 
-router.get("/login/success", isLoggedIn, (req, res) => {
+router.get("/login/success", (req, res) => {
     if (req.user) {
         res.status(200).send({
             success: true,
