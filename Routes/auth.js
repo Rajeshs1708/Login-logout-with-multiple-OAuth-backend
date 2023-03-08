@@ -75,10 +75,7 @@ router.post('/signin', async (req, res) => {
 router.get('/getUser', (req, res) => {
   if (req.user) {
     res.status(200).send({
-      user: {
-        id: req.user._id,
-        name: req.user.name
-      }
+      user: user
     })
   } else {
     res.status(403).send({
