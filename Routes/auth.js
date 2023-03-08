@@ -71,19 +71,6 @@ router.post('/signin', async (req, res) => {
   }
 })
 
-//Get user
-router.get('/getUser', (req, res) => {
-  if (req.user) {
-    res.status(200).send({
-      user: user
-    })
-  } else {
-    res.status(403).send({
-      success: true,
-      message: 'Not Authorized'
-    })
-  }
-})
 
 // Send OTP
 router.post('/send-otp', async (req, res) => {
